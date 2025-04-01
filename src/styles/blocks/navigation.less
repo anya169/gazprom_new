@@ -1,0 +1,33 @@
+.navigation{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   width: 1700px;
+   padding-top: 50px;
+   justify-self: center;
+   &__link{
+      display: flex;
+      flex-direction: column;
+      color: @grey;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 20px;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-family: @font;
+      &:hover {
+         color: @blue;
+      }
+   }
+   &__link > span {
+      order: 2;
+   }
+   &__icon{
+      align-self: center;
+      margin-bottom: 15px;
+      &:hover {
+         fill: @blue;
+         transition: fill 0.2s;
+      }
+   }
+}

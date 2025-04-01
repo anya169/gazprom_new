@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang = "ru" >
+   @@include('blocks/head.html')
+   <body class = "body">
+      @@include('blocks/page-header.html')
+      <main class = "main">
+         @@include('blocks/navigation.html')
+         <div class="cards">
+            <section class="listing cards__listing">
+          
+              <div class="listing__cards-list">
+                <!-- prettier-ignore -->
+                @@loop('blocks/card.html', [
+                  {
+                    "class": "listing__card",
+                    "title": "Летняя путевка в детский лагерь",
+                    "descr": "В 2025 году на летний сllllllllllllllllllllllllllllllllllllllllllllll;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;езон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                  
+                  },
+                  {
+                     "class": "listing__card",
+                     "title": "Летняя путевка в детский лагерь",
+                     "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                   
+                   },
+                   {
+                     "class": "listing__card",
+                     "title": "Летняя путевка в детский лагерь",
+                     "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                   
+                   },
+                   {
+                     "class": "listing__card",
+                     "title": "Летняя путевка в детский лагерь",
+                     "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                   
+                   },
+                   {
+                     "class": "listing__card",
+                     "title": "Летняя путевка в детский лагерь",
+                     "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                   
+                   }
+
+                ])
+              </div>
+          
+              <!-- Кнопка "Показать все" -->
+            </section>
+        </div>
+      <!--<svg class="helper" width="93" height="93">
+         <use xlink:href="assets/icons/symbols.svg#helper"></use>
+      </svg>
+      </main>  --> 
+   @@include('blocks/page-footer.html')
+   </body>
+</html>
