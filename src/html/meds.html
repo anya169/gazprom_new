@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang = "ru" >
+   @@include('blocks/head.html')
+   <body class = "body">
+      @@include('blocks/page-header.html')
+      <main class = "main">
+         @@include('blocks/navigation.html')
+         <div class="filters">
+            <div class="filter">
+               <a class="filter__name">Фильтр</a>
+               <div class="filter__list">
+                  <form id="filterForm">
+                     <article class="filter">
+                        <label>
+                           <span class="filter__title">Семейное положение:</span>
+                           <select id="status"
+                                 class="filter__select"
+                                 name="status"
+                                 >
+                                 <option value="Холост(а)">Холост(а)</option>
+                                 <option value="Женат/замужем">Женат/замужем</option>
+                              </select>
+                           </label>
+                  </article>
+                  <article class="filter">
+                     <label>
+                        <span class="filter__title">Дети:</span>
+                        <select id="kids"
+                              class="filter__select"
+                              name="kids"
+                              >
+                              <option value="Нет детей">Нет детей</option>
+                              <option value="1 ребенок">1 ребенок</option>
+                              <option value="2 ребенка">2 ребенка</option>
+                              <option value="3 и более ребенка">3 и более ребенка</option>
+                           </select>
+                        </label>
+                        <label>
+                           <span class="filter__title">Стаж:</span>
+                           <select id="kids"
+                                 class="filter__select"
+                                 name="kids"
+                                 >
+                                 <option value="Менее 3 лет">Менее 3 лет</option>
+                                 <option value="От 3 до 5 лет">От 3 до 5 лет</option>
+                                 <option value="От 5 до 10 лет">От 5 до 10 лет</option>
+                                 <option value="Более 10 лет">Более 10 лет</option>
+                              </select>
+                           </label>
+               </article>
+               <div class="filter__buttons">
+                  <button href="#" class="filter__btn " id="filter__btn">Применить</button>
+                  <a href="#" class="filter__delete">Сбросить фильтры</a>
+                </div>
+                  </form>
+                  
+                
+               
+               </div>
+               
+            </div>
+            <div class="cards">
+               <section class="listing cards__listing">
+                 <div class="listing__cardslist--filtered">
+                   <!-- prettier-ignore -->
+                   @@loop('blocks/card.html', [
+                     {
+                       "class": "listing__card",
+                       "title": "Летняя путевка в детский лагерь",
+                       "descr": "В 2025 году на летний сllllllllllllllllllllllllllllllllllllllllllllll;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;езон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                     
+                     },
+                     {
+                        "class": "listing__card",
+                        "title": "Летняя путевка в детский лагерь",
+                        "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                      
+                      },
+                      {
+                        "class": "listing__card",
+                        "title": "Летняя путевка в детский лагерь",
+                        "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                      
+                      },
+                      {
+                        "class": "listing__card",
+                        "title": "Летняя путевка в детский лагерь",
+                        "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                      
+                      },
+                      {
+                        "class": "listing__card",
+                        "title": "Летняя путевка в детский лагерь",
+                        "descr": "В 2025 году на летний сезон объявлен набор для сотрудников с детьми в возрасте от 7 до 17 лет. Отдых предоставляет “Артек”."
+                      
+                      }
+   
+                   ])
+                 </div>
+             
+                 <!-- Кнопка "Показать все" -->
+               </section>
+           </div>
+         </div>
+         
+      <!--<svg class="helper" width="93" height="93">
+         <use xlink:href="assets/icons/symbols.svg#helper"></use>
+      </svg>-->
+      </main>   
+   @@include('blocks/page-footer.html')
+   
+   </body>
+</html>

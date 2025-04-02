@@ -1,6 +1,6 @@
 .listing{
- 
-   &__cards-list{
+   
+   &__cardslist{
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
@@ -11,7 +11,9 @@
       padding-right: 40px;
       flex-wrap: wrap;
       gap: 40px;
-     
+      &--filtered{
+         justify-self: end;
+      }
    }
    &__card{
       display: flex;

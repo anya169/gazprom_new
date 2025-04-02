@@ -105,6 +105,16 @@ img {
   padding-top: 15px;
   padding-bottom: 95px;
 }
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 4px solid #0079C2;
+  background-color: #0079C2;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 .container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -363,7 +373,7 @@ img {
 .card:first-child {
   padding-top: 50px;
 }
-.listing__cards-list {
+.listing__cardslist {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -383,6 +393,9 @@ img {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 40px;
+}
+.listing__cardslist--filtered {
+  justify-self: end;
 }
 .listing__card {
   display: -webkit-box;
@@ -440,19 +453,15 @@ img {
   -webkit-transition: fill 0.2s;
   transition: fill 0.2s;
 }
-.dropdown {
+.navigation__dropdown {
   position: relative;
   display: inline-block;
 }
-.dropdown__dropbtn {
-  background-color: #3498db;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.navigation__dropdown:hover .navigation__content {
+  display: block;
 }
-.dropdown__content {
+.navigation__content {
+  right: -45px;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -461,17 +470,209 @@ img {
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-.dropdown__content a {
-  color: black;
+.navigation__content a {
+  font-family: "HeliosCondC";
+  color: #0078C1;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-.dropdown-content a:hover {
+.navigation__content a:hover {
   background-color: #f1f1f1;
 }
-.dropdown:hover .dropdown-content {
+.filter {
+  font-family: "HeliosCondC";
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.filter__name {
+  -ms-flex-item-align: center;
+      align-self: center;
+  margin-top: 65px;
+  font-size: 20px;
+}
+.filter__list {
+  margin-top: 25px;
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 330px;
+  height: 400px;
+  gap: 10px;
+  border: 2px solid #0078C1;
+  border-radius: 20px;
+}
+.filter__container {
+  position: relative;
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  height: 25px;
+  border: 1px solid #0078C1;
+  border-radius: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.filter__container:hover .filter__content {
   display: block;
+}
+.filter__title {
+  margin-left: 10px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #1f1E1E;
+  -webkit-transition: color 0.2s, color 0.2s;
+  transition: color 0.2s, color 0.2s;
+}
+.filter__select {
+  margin-bottom: 15px;
+  font-family: "HeliosCondC";
+  color: #0078C1;
+  font-size: 18px;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+.filter__select:hover {
+  background-color: #f1f1f1;
+}
+.filter__icon {
+  margin-top: 7px;
+}
+.filter__buttons {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+.filter__btn {
+  width: 300px;
+  height: 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #0078C1;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: "HeliosCondC";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.filter__btn:active {
+  background-color: #024771;
+  color: #ffffff;
+}
+.filter__delete {
+  width: 300px;
+  height: 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 10px;
+  color: #dedede;
+  font-family: "HeliosCondC";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.filter__delete:active {
+  color: #1f1E1E;
+}
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  justify-items: center;
+}
+.login__container {
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: center;
+  font-family: "HeliosCondC";
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #0078C1;
+  width: 400px;
+}
+.login__input {
+  color: #0078C1;
+  margin-left: 15px;
+}
+.login__h {
+  text-align: center;
+  color: #0078C1;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+.login__input-group {
+  margin-bottom: 20px;
+}
+.login__button {
+  margin-left: 115px;
+  font-family: "HeliosCondC";
+  text-align: center;
+  width: 155px;
+  height: 39px;
+  padding: 0;
+  background-color: #ffffff;
+  color: #0078C1;
+  border: 2px solid #0078C1;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.login__button:hover {
+  background-color: #0078C1;
+  color: #ffffff;
+}
+.login__text {
+  color: #ffffff;
 }
 @media (hover: hover) {
   .page-header__btn:hover {
@@ -485,5 +686,12 @@ img {
   }
   .page-footer__link:hover {
     color: #024771;
+  }
+  .filter__btn:hover {
+    background-color: #024771;
+    color: #ffffff;
+  }
+  .filter__delete:hover {
+    color: #1f1E1E;
   }
 }
