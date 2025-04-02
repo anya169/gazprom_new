@@ -674,6 +674,31 @@ input[type="password"] {
 .login__text {
   color: #ffffff;
 }
+.info {
+  margin-top: 30px;
+  margin-left: 70px;
+  padding-left: 20px;
+  padding-bottom: 30px;
+  font-family: "HeliosCondC";
+  border: 2px solid #0078C1;
+  border-radius: 20px;
+  width: 700px;
+}
+.info__title {
+  font-size: 24px;
+  color: #0078C1;
+}
+.info__prop {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 5px;
+}
 @media (hover: hover) {
   .page-header__btn:hover {
     color: #024771;
