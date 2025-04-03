@@ -276,8 +276,6 @@ input[type="password"] {
   padding-left: 15px;
 }
 .page-footer {
-  padding-left: 90px;
-  padding-top: 75px;
   font-family: "HeliosCondC";
   /*&__liners{
       display: flex;
@@ -712,6 +710,80 @@ input[type="password"] {
 }
 .path__path > span:hover {
   color: #024771;
+}
+.cards__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-self: center;
+}
+.benefit {
+  font-family: "HeliosCondC";
+  margin-left: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.benefit__title {
+  color: #0078C1;
+  margin-bottom: 20px;
+}
+.benefit__img {
+  margin-bottom: 20px;
+}
+.benefit__desc {
+  font-size: 20px;
+  margin-bottom: 20px;
+  -ms-flex-item-align: end;
+      align-self: end;
+  text-align: left;
+}
+.benefit__row {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 20px;
+}
+.benefit__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.benefit__btn {
+  margin-top: 20px;
+  font-family: "HeliosCondC";
+  text-align: center;
+  width: 155px;
+  height: 39px;
+  padding: 0;
+  background-color: #ffffff;
+  color: #0078C1;
+  border: 2px solid #0078C1;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.benefit__btn:hover {
+  background-color: #0078C1;
+  color: #ffffff;
 }
 @media (hover: hover) {
   .page-header__btn:hover {

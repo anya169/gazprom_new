@@ -1,0 +1,48 @@
+.benefit{
+   font-family: @font;
+   margin-left: 90px;
+   display: flex;
+   flex-direction: column;
+   &__title{
+      color: @blue;
+      margin-bottom: 20px;
+   }
+   &__img{
+      margin-bottom: 20px;
+   }
+   &__desc{
+      font-size: 20px;
+      margin-bottom: 20px;
+      align-self: end;
+      text-align: left;
+   }
+   &__row{
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+   }
+   &__right{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+   &__btn{
+      margin-top: 20px;
+      font-family: @font;
+      text-align: center;
+      width: 155px;
+      height: 39px;
+      padding: 0;
+      background-color: @white;
+      color: @blue;
+      border: 2px solid @blue;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 20px;
+      &:hover {
+         background-color: @blue;
+         color: @white;
+      }
+  }
+}
