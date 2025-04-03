@@ -97,12 +97,18 @@
             const status = filterForm.querySelector('#status').value;
             const kids = filterForm.querySelector('#kids').value;
             const time = filterForm.querySelector('#time').value;
-    
+            
+            const urlParts = window.location.pathname.split('/');
+            const categoryPage = urlParts[urlParts.length - 1];
+            const categoryId = parseInt(categoryPage.replace('.html', ''), 10);
+            console.log(categoryId);
+
             // Отправляем данные на сервер
             fetch('http://127.0.0.1:8000/submit-filter?' + new URLSearchParams({
                 status_value: status,
                 kids_value: kids,
-                time_value: time
+                time_value: time,
+                category_id: categoryId
             }).toString())
             .then(response => response.json())
             .then(result => {
@@ -124,7 +130,7 @@
     
             benefits.forEach(benefit => {
                 const card = document.createElement('article');
-                card.className = 'card';
+                card.className = 'card listing__card';
     
                 const link = document.createElement('a');
                 link.href = '#';
@@ -155,5 +161,70 @@
             });
         }
     });
+    
+    document.addEventListener('DOMContentLoaded', function() {
+            
+            const urlParts = window.location.pathname.split('/');
+            const categoryPage = urlParts[urlParts.length - 1];
+            const categoryId = parseInt(categoryPage.replace('.html', ''), 10);
+            if (categoryId == 1 || categoryId == 2 || categoryId == 3 || categoryId ==4 || categoryId == 5){
+                    // Отправляем данные на сервер
+                fetch('http://127.0.0.1:8000/get-category-benefits?' + new URLSearchParams({
+                    category_id: categoryId
+                }).toString())
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Success:', result);
+                    if (result.success) {
+                        displayBenefits(result.benefits);
+                    } else {
+                        console.error('Error:', result.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            } 
+        });
+        
+
+        function displayBenefits(benefits) {
+            const cardContainer = document.querySelector('.cards');
+            cardContainer.innerHTML = ''; // Очищаем контейнер перед добавлением новых карточек
+    
+            benefits.forEach(benefit => {
+                const card = document.createElement('article');
+                card.className = 'card listing__card';
+    
+                const link = document.createElement('a');
+                link.href = '#';
+                link.className = 'card__link';
+    
+                const container = document.createElement('div');
+                container.className = 'blog-card__container';
+    
+                const title = document.createElement('h1');
+                title.className = 'card__title';
+                title.textContent = benefit.title;
+    
+                const description = document.createElement('p');
+                description.className = 'card__description';
+                description.textContent = benefit.description;
+    
+                container.appendChild(title);
+                container.appendChild(description);
+    
+                const liners = document.createElement('div');
+                liners.className = 'card__liners';
+    
+                link.appendChild(container);
+                link.appendChild(liners);
+    
+                card.appendChild(link);
+                cardContainer.appendChild(card);
+            });
+        }
+
   
+
     })();
